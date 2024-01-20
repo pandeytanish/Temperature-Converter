@@ -4,14 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        center {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 150px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
 </head>
+<center>
 <label for="temp">Enter Temeprature In Celsius</label>
 <input type="number" id="temp">
+<button onclick="celcToFahr()">Convert</button>
+<p id="result"></p>
+</center>
 <body>
     <script>
-        // let  = prompt("Enter temp in celsius");
-        // b = (a * 9/5) + 32;
-        // document.write(b,"Temeprature In farhanite");
+ function celcToFahr() {
+    var cValue = document.getElementById("temp").value;
+    var fValue = (cValue * 9/5) + 32;
+    // document.write(cValue ," degree celsiusIn farhanite is ",fValue);
+    document.getElementById("result").innerHTML = `${cValue} Celsius is equal to ${fValue} Fahrenheit.`;
+}
     </script>
 </body>
 </html>
